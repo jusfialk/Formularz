@@ -6,7 +6,7 @@ function testWeight($weight){
 
 
 	
-	if(preg_match("/([0-9]{3})*/", $weight)){
+	if(preg_match("/[0-9]{2,3}/", $weight)){
 return "<p style=\"font-­‐size:120%; font-­‐weight:bold; color:#0000FF;\"> Zapisano!</p>";
 	}
     else {
