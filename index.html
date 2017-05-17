@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ankieta</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/Chart.bundle.js"></script>
+    <script src="js/custom.js"></script>
+    <script type=text/javascript src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <form class="form-horizontal" action="wyniki.php" method="post">
+        <fieldset>
+
+            <!-- Form Name -->
+         <!-- <legend>
+            Ankieta dotycząca wiedzy oraz predyspozycji do zachorowania na udar mózgu</legend>
+             -->
+            <center><h2><font color="#33CCCC">Ankieta dotycząca wiedzy na temat udaru mózgu</font></h2></center>
+            <!-- Multiple Radios -->
+            <br />
+                <center>
+                    <h4>
+                        Witaj! Odpowiedz proszę na nastepujące pytania:
+
+                    </h4>
+                </center>
+            <br />
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="sex">Płeć</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="sex_0">
+                            <input type="radio" name="sex" id="sex_0" value="0" >
+                            Kobieta
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="sex_1">
+                            <input type="radio" name="sex" id="sex_1" value="1">
+                            Mężczyzna
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Multiple Radios -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="age">Wiek</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="age_0">
+                            <input type="radio" name="age" id="age_0" value="0" >
+                            mniej niż 20
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="age_1">
+                            <input type="radio" name="age" id="age_1" value="1">
+                            20 - 35
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="age_2">
+                            <input type="radio" name="age" id="age_2" value="2">
+                            35 - 50
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="age_3">
+                            <input type="radio" name="age" id="age_3" value="3">
+                            50 - 65
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="age_4">
+                            <input type="radio" name="age" id="age_4" value="4">
+                            66 i więcej
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Multiple Radios -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="city">Miejsce zamieszkania</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="city_0">
+                            <input type="radio" name="city" id="city_0" value="0" >
+                            Wieś
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="city_1">
+                            <input type="radio" name="city" id="city_1" value="1">
+                            Miasto do 10 tys. mieszkańców
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="city_2">
+                            <input type="radio" name="city" id="city_2" value="2">
+                            Miasto do 100 tys. mieszkańców
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="city_3">
+                            <input type="radio" name="city" id="city_3" value="3">
+                            Miasto do 500 tys. mieszkańców
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="city_4">
+                            <input type="radio" name="city" id="city_4" value="4">
+                            Miasto powyżej 500 tys. mieszkańców
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="weight">Waga [kg]:</label>
+                <div class="col-md-1">
+                    <input id="textinput" name="weight" type="text" placeholder="" class="form-control input-md" onblur="javascript:testWeight(this.value)">
+                    <div id="status"></div>
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="height">Wzrost [cm]:</label>
+                <div class="col-md-1">
+                    <input id="textinput" name="height" type="text" placeholder="" class="form-control input-md">
+
+<!--                     onblur="javascript:testHeight(this.value)">
+                    <div id="status"></div> -->
+
+                </div>
+            </div>
+            <!-- Multiple Radios -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="what_is_stroke">Czym jest udar mózgu?</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="what_is_stroke_0">
+                            <input type="radio" name="what_is_stroke" id="what_is_stroke_0" value="0">
+                            przegrzanie słoneczne
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="what_is_stroke_1">
+                            <input type="radio" name="what_is_stroke" id="what_is_stroke_1" value="1">
+                            niedokrwienie lub krwotok w części mózgu
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="what_is_stroke_2">
+                            <input type="radio" name="what_is_stroke" id="what_is_stroke_2" value="2">
+                            zatrucie
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="what_is_stroke_3">
+                            <input type="radio" name="what_is_stroke" id="what_is_stroke_3" value="3">
+                            infekcja uogólniona
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Multiple Radios -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="which_is_more_frequent">Która postać udaru mózgu występuje częściej?</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="which_is_more_frequent_0">
+                            <input type="radio" name="which_is_more_frequent" id="which_is_more_frequent_0" value="0" >
+                            udar krwotoczny
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="which_is_more_frequent_1">
+                            <input type="radio" name="which_is_more_frequent" id="which_is_more_frequent_1" value="1">
+                            udar niedokrwienny
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Multiple Checkboxes -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="causes"> Najczęstsze przyczyny udaru mózgu to:</label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label for="causes_0">
+                            <input type="checkbox" name="causes[]" id="causes_0" value="0">
+                            nadciśnienie tętnicze
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="causes_1">
+                            <input type="checkbox" name="causes[]" id="causes_1" value="1">
+                            nadwaga
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="causes_2">
+                            <input type="checkbox" name="causes[]" id="causes_2" value="2">
+                            nowotwór
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="causes_3">
+                            <input type="checkbox" name="causes[]" id="causes_3" value="3">
+                            migotanie przedsionków
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="causes_4">
+                            <input type="checkbox" name="causes[]" id="causes_4" value="4">
+                            anemia
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="causes_5">
+                            <input type="checkbox" name="causes[]" id="causes_5" value="5">
+                            migrena
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="causes_6">
+                            <input type="checkbox" name="causes[]" id="causes_6" value="6">
+                            palenie papierosów
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="causes_7">
+                            <input type="checkbox" name="causes[]" id="causes_7" value="7">
+                            cukrzyca
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Multiple Checkboxes -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="symptoms">Najczęstsze objawy udaru mózgu to:</label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label for="symptoms_0">
+                            <input type="checkbox" name="symptoms[]" id="symptoms_0" value="0">
+                            ból całego ciała
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="symptoms_1">
+                            <input type="checkbox" name="symptoms[]" id="symptoms_1" value="1">
+                            zaburzenia widzenia
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="symptoms_2">
+                            <input type="checkbox" name="symptoms[]" id="symptoms_2" value="2">
+                            trudności z mówieniem
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="symptoms_3">
+                            <input type="checkbox" name="symptoms[]" id="symptoms_3" value="3">
+                            wymioty
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="symptoms_4">
+                            <input type="checkbox" name="symptoms[]" id="symptoms_4" value="4">
+                            paraliż ręki lub nogi
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="symptoms_5">
+                            <input type="checkbox" name="symptoms[]" id="symptoms_5" value="5">
+                            zaburzenia trawienia
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="symptoms_6">
+                            <input type="checkbox" name="symptoms[]" id="symptoms_6" value="6">
+                            senność
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="symptoms_7">
+                            <input type="checkbox" name="symptoms[]" id="symptoms_7" value="7">
+                            asymetria twarzy
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Multiple Radios -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="causes_young_people">Najczęstszą przyczyną udaru mózgu u <b>ludzi młodych</b> jest:</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="causes_young_people_0">
+                            <input type="radio" name="causes_young_people" id="causes_young_people_0" value="0">
+                            miażdżyca
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="causes_young_people_1">
+                            <input type="radio" name="causes_young_people" id="causes_young_people_1" value="1">
+                            zawał serca
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="causes_young_people_2">
+                            <input type="radio" name="causes_young_people" id="causes_young_people_2" value="2">
+                            rozwarstwienie tętnicy domózgowej
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="causes_young_people_3">
+                            <input type="radio" name="causes_young_people" id="causes_young_people_3" value="3">
+                            migrena
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Multiple Radios (inline) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="age_stroke">W jakim wieku ludzie najczęściej chorują na udar mózgu?</label>
+                <div class="col-md-4">
+                    <label class="radio-inline" for="age_stroke_0">
+                        <input type="radio" name="age_stroke" id="age_stroke_0" value="0">
+                        50 - 65
+                    </label>
+                    <label class="radio-inline" for="age_stroke_1">
+                        <input type="radio" name="age_stroke" id="age_stroke_1" value="1">
+                        65 - 80
+                    </label>
+                    <label class="radio-inline" for="age_stroke_2">
+                        <input type="radio" name="age_stroke" id="age_stroke_2" value="2">
+                        80 - 95
+                    </label>
+               </div>
+           
+          
+           </div><!-- Multiple Checkboxes -->
+           <div class="form-group">
+               <label class="col-md-4 control-label" for="prevention">Aby zapobiegać zachorowaniu na udar mózgu należy: </label>
+               <div class="col-md-4">
+                   <div class="checkbox">
+                       <label for="prevention_0">
+                           <input type="checkbox" name="prevention[]" id="prevention_0" value="0">
+                           regularnie mierzyć ciśnienie
+                       </label>
+                   </div>
+                    <div class="checkbox">
+                        <label for="prevention_1">
+                            <input type="checkbox" name="prevention[]" id="prevention_1" value="1">
+                            regularnie pić alkohol
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="prevention_2">
+                            <input type="checkbox" name="prevention[]" id="prevention_2" value="2">
+                            używać dużo soli w potrawach
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="prevention_3">
+                            <input type="checkbox" name="prevention[]" id="prevention_3" value="3">
+                            podejmować aktywność fizyczną
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="prevention_4">
+                            <input type="checkbox" name="prevention[]" id="prevention_4" value="4">
+                            badać poziom cholesterolu
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="prevention_5">
+                            <input type="checkbox" name="prevention[]" id="prevention_5" value="5">
+                            palić papierosy
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Multiple Radios -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recognition">Co zrobić, gdy u kogoś rozpoznamy udar mózgu?</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="recognition_0">
+                            <input type="radio" name="recognition" id="recognition_0" value="0" >
+                            położyć chorego w pozycji bocznej ustalonej
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="recognition_1">
+                            <input type="radio" name="recognition" id="recognition_1" value="1">
+                            natychmiast wezwać pogotowie
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="recognition_2">
+                            <input type="radio" name="recognition" id="recognition_2" value="2">
+                            posadzić chorego w pozycji półleżącej
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="recognition_3">
+                            <input type="radio" name="recognition" id="recognition_3" value="3">
+                            podać choremu leki na ciśnienie
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            
+            <!-- Multiple Radios -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="time">W jakim czasie trzeba podjąć leczenie przy udarze mózgu? </label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="time_0">
+                            <input type="radio" name="time" id="time_0" value="0" >
+                            do 4,5 godziny
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="time_1">
+                            <input type="radio" name="time" id="time_1" value="1">
+                            4,5 - 6 godziny
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="time_2">
+                            <input type="radio" name="time" id="time_2" value="2">
+                            6 - 8 godzin
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="time_3">
+                            <input type="radio" name="time" id="time_3" value="3">
+                            8 i więcej godzin
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Multiple Radios (inline) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="death">Którą co do częstości przyczyną śmierci jest udar mózgu? </label>
+                <div class="col-md-4">
+                    <label class="radio-inline" for="death_0">
+                        <input type="radio" name="death" id="death_0" value="0" >
+                        1-3
+                    </label>
+                    <label class="radio-inline" for="death_1">
+                        <input type="radio" name="death" id="death_1" value="1">
+                        4-6
+                    </label>
+                    <label class="radio-inline" for="radios-2">
+                        <input type="radio" name="death" id="death_2" value="2">
+                        dalszą
+                    </label>
+                </div>
+            </div>
+    
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton"></label>
+                <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-primary" >Wyślij</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</body>
+</html>
+
+
