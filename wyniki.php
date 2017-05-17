@@ -48,6 +48,8 @@ if (isset($_POST["singlebutton"])) {
 
     $rezultat = mysqli_query($polaczenie, $zapytanie);
 
+
+
     //jesli się nie powiedzie, zwróc informację o bledach
     if ($rezultat) {
         echo 'Zapisano ankietę!';
@@ -56,18 +58,7 @@ if (isset($_POST["singlebutton"])) {
         echo 'zapytanie: ' . $zapytanie;
         exit;
     }
-
-    function testWaga($weight){
     
-    if(preg_match("/^([0-9]{2})(-[0-9]{3})?$/i", $weight)){
-return "<p style=\"font-­‐size:120%; font-­‐weight:bold; color:#0000FF;\"> Zgadza sie!</p>";
-    }
-    else {
-return "<p style=\"font-­‐size:120%; font-­‐weight:bold; color:#FF0000;\">Cos poszlo nie tak. Wpisz jeszcze raz!</p>";
-    }
-}
-$status=testWaga($_REQUEST['weight']);
-echo $status;
 
 
 }

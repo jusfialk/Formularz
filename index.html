@@ -10,6 +10,7 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/Chart.bundle.js"></script>
     <script src="js/custom.js"></script>
+    <script type=text/javascript src="scriptH.js"></script>
     <script type=text/javascript src="script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -128,7 +129,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="weight">Waga [kg]:</label>
                 <div class="col-md-1">
-                    <input id="textinput" name="weight" type="text" placeholder="" class="form-control input-md" onblur="javascript:testWeight(this.value)">
+                    <input id="textinput" name="weight" type="text" placeholder="" class="form-control input-md"
+                     onblur="javascript:testWeight(this.value)">
                     <div id="status"></div>
 
                 </div>
@@ -138,12 +140,14 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="height">Wzrost [cm]:</label>
                 <div class="col-md-1">
-                    <input id="textinput" name="height" type="text" placeholder="" class="form-control input-md">
-
-<!--                     onblur="javascript:testHeight(this.value)">
-                    <div id="status"></div> -->
-
+                    <input id="textinput" name="height" type="text" placeholder="" class="form-control input-md"
+                     onblur="javascript:testHeight(this.value)">
+                      <div id="status2"></div>                
+                    
                 </div>
+
+
+
             </div>
             <!-- Multiple Radios -->
             <div class="form-group">
