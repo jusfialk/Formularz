@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
@@ -17,7 +17,6 @@
     if (isset($bledy) and $bledy) {
         echo '<div class="alert alert-danger"><strong>Uwaga!</strong> Formularz zawiera błędy.</div>';
     }
-
     if (isset($bledy) and !$bledy) {
         echo '<div class="alert alert-success"><strong>Sukces!</strong> Zapisano wyniki ankiety.</div>';
     }
@@ -139,7 +138,7 @@
 
         <!-- Która postać udaru mózgu występujeczęściej? -->
         <div class="form-group<?php if(isset($bledy) and in_array('which_is_more_frequent', $bledy)) echo ' has-error'; ?>">
-            <label class="col-md-4 control-label">Która postać udaru mózgu występujeczęściej?</label>
+            <label class="col-md-4 control-label">Która postać udaru mózgu występuje częściej?</label>
             <div class="col-md-4">
                 <div class="radio">
                     <input type="radio" name="which_is_more_frequent" id="which_is_more_frequent_0" value="0"<?php if (isset($dane) and $dane['which_is_more_frequent'] === 0) echo ' checked' ?>>
@@ -284,7 +283,7 @@
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="prevention[]" id="prevention_1" value="1"<?php if (isset($dane['prevention']) and in_array(1, $dane['prevention'])) echo ' checked' ?>>
-                    <label for="prevention_1">spożywać zieloną herbatę</label>
+                    <label for="prevention_1">pić zieloną herbatę</label>
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="prevention[]" id="prevention_2" value="2"<?php if (isset($dane['prevention']) and in_array(2, $dane['prevention'])) echo ' checked' ?>>
@@ -292,15 +291,15 @@
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="prevention[]" id="prevention_3" value="3"<?php if (isset($dane['prevention']) and in_array(3, $dane['prevention'])) echo ' checked' ?>>
-                    <label for="prevention_3">podejmować aktywność fizyczną</label>
+                    <label for="prevention_3">podejmować aktywność fizyczną i dbać o prawidłową masę ciała</label>
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="prevention[]" id="prevention_4" value="4"<?php if (isset($dane['prevention']) and in_array(4, $dane['prevention'])) echo ' checked' ?>>
-                    <label for="prevention_4">badać poziom cholesterolu</label>
+                    <label for="prevention_4">badać poziom cukru i cholesterolu we krwi</label>
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="prevention[]" id="prevention_5" value="5"<?php if (isset($dane['prevention']) and in_array(5, $dane['prevention'])) echo ' checked' ?>>
-                    <label for="prevention_5">regularnie mierzyć poziom curu we krwi</label>
+                    <label for="prevention_5">nosić czapkę na słońcu</label>
                 </div>
             </div>
         </div>
