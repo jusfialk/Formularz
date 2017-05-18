@@ -10,15 +10,9 @@ Ankieta PHP/HTML
 
 ## Dane do bazy na serwerze
 
-<?php
-
-return array(
     'db.host' => 'localhost',
     'db.uzytkownik' => 'id1710261_raim',
     'db.haslo' => 'raim2017!',
     'db.baza' => 'id1710261_raim',
     'db.port' => 3306,
     'wyswietl_bledy' => true,
-);
-
-?>
