@@ -69,8 +69,9 @@ if (isset($_POST["singlebutton"])) {
             $bledy['komunikat'] = "<strong>Błąd!</strong> Wystąpił błąd podczas zapisywania wyników do bazy danych.<br>Zapytanie: <i>$zapytanie</i>";
         }
     }
-}
 
-if ($polaczenie) {
-    mysqli_close($polaczenie);
+    // Zamykamy połączenie
+    if ($polaczenie) {
+        mysqli_close($polaczenie);
+    }
 }
