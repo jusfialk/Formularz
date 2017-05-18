@@ -20,3 +20,5 @@ return array(
     'db.port' => 3306,
     'wyswietl_bledy' => true,
 );
+
+?>
