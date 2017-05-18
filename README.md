@@ -8,7 +8,7 @@ Ankieta PHP/HTML
 
 
 
-DANE DO BAZY NA SERWERZE
+## Dane do bazy na serwerze
 
 <?php
 
