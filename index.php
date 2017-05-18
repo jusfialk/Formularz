@@ -284,11 +284,11 @@
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="prevention[]" id="prevention_1" value="1"<?php if (isset($dane['prevention']) and in_array(1, $dane['prevention'])) echo ' checked' ?>>
-                    <label for="prevention_1">regularnie pić alkohol</label>
+                    <label for="prevention_1">spożywać zieloną herbatę</label>
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="prevention[]" id="prevention_2" value="2"<?php if (isset($dane['prevention']) and in_array(2, $dane['prevention'])) echo ' checked' ?>>
-                    <label for="prevention_2">używać dużo soli w potrawach</label>
+                    <label for="prevention_2">używać mało soli w potrawach</label>
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="prevention[]" id="prevention_3" value="3"<?php if (isset($dane['prevention']) and in_array(3, $dane['prevention'])) echo ' checked' ?>>
@@ -300,7 +300,7 @@
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="prevention[]" id="prevention_5" value="5"<?php if (isset($dane['prevention']) and in_array(5, $dane['prevention'])) echo ' checked' ?>>
-                    <label for="prevention_5">palić papierosy</label>
+                    <label for="prevention_5">regularnie mierzyć poziom curu we krwi</label>
                 </div>
             </div>
         </div>
