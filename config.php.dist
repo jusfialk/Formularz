@@ -1,0 +1,10 @@
+<?php
+
+return array(
+    'db.host' => 'localhost',
+    'db.uzytkownik' => 'root',
+    'db.haslo' => 'root',
+    'db.baza' => 'ankieta',
+    'db.port' => 3306,
+    'wyswietl_bledy' => true,
+);
